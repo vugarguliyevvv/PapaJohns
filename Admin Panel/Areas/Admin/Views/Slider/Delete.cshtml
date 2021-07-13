@@ -1,0 +1,21 @@
+﻿@using PizzaDelivery.Models
+@model Slider
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "_AdminLayout";
+}
+
+<div class="row">
+    <img src="~/assets/img/slider/@Model.Image" width="400" height="200" />
+</div>
+@*<div class="row">
+    @Html.Raw(Model.Title)
+    <p>@Model.Description</p>
+</div>*@
+<div class="row mt-3">
+    <a class="btn btn-dark" asp-action="Index">Go Back</a>
+    <form method="post">
+        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+    </form>
+</div>
+

@@ -1,0 +1,57 @@
+﻿@using PizzaDelivery.Models
+@model Product
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_AdminLayout";
+}
+
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">yeni Mehsul yarat</h4>
+                <form class="forms-sample" method="post" enctype="multipart/form-data">
+
+                    <div class="row">
+                        <div class="col-10">
+                            <div class="form-group">
+                                <label asp-for="PhotoProduct"></label>
+                                <input asp-for="PhotoProduct" class="form-control" accept="image/*">
+                                <span asp-validation-for="PhotoProduct" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-5 mr-5">
+                            <div class="form-group">
+                                <label>Ad</label>
+                                <input asp-for="Name" class="form-control" placeholder="Ad">
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Qiymet</label>
+                                <input asp-for="Price" class="form-control" placeholder="Qiymet">
+                                <span asp-validation-for="Price" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Details</label>
+                                <input asp-for="Details" class="form-control" placeholder="Endirim">
+                                <span asp-validation-for="Details" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label class="mr-3">Kateqoriya</label>
+                                    <select name="CategoryId" asp-for="@Model.CategoryId"
+                                            asp-items="@ViewBag.Categories">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-success mr-2 create-book mt-3">Yarat</button>
+
+</form>
+            </div>
+        </div>
+    </div>
+</div>
+
